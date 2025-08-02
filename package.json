@@ -1,0 +1,50 @@
+{
+  "name": "site-analysis-platform",
+  "version": "1.0.0",
+  "description": "A comprehensive web application for environmental site analysis",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && python manage.py runserver",
+    "install:frontend": "cd frontend && npm install",
+    "install:backend": "cd backend && pip install -r requirements.txt",
+    "install:all": "npm run install:frontend && npm run install:backend",
+    "build": "cd frontend && npm run build",
+    "test": "concurrently \"npm run test:frontend\" \"npm run test:backend\"",
+    "test:frontend": "cd frontend && npm test",
+    "test:backend": "cd backend && python manage.py test",
+    "lint": "concurrently \"npm run lint:frontend\" \"npm run lint:backend\"",
+    "lint:frontend": "cd frontend && npm run lint",
+    "lint:backend": "cd backend && flake8 .",
+    "setup": "npm run install:all && cd backend && python manage.py migrate"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/site-analysis-platform.git"
+  },
+  "keywords": [
+    "environmental-analysis",
+    "site-analysis",
+    "vegetation-analysis",
+    "climate-data",
+    "geospatial",
+    "django",
+    "nextjs",
+    "react",
+    "postgresql",
+    "postgis"
+  ],
+  "author": "Your Team",
+  "license": "MIT",
+  "workspaces": [
+    "frontend"
+  ]
+}

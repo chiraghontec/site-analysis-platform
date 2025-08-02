@@ -1,0 +1,53 @@
+# Root level gitignore for the entire project
+
+# Documentation and design assets (not for GitHub)
+/documentation/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Compressed files
+*.zip
+*.tar.gz
+*.rar
+
+# Cache directories
+cache/
+.cache/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+
+# Log files
+*.log
+logs/
+
+# Environment variables
+.env
+.env.*
+
+# Node modules (handled by frontend .gitignore)
+node_modules/
+
+# Python cache (handled by backend .gitignore)
+__pycache__/
+*.pyc
+
+# Build artifacts
+build/
+dist/
+out/

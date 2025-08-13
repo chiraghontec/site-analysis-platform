@@ -1,47 +1,59 @@
-/* src/app/globals.css */
-
-/* Font Imports */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-/*
-  For Geist font, if you're using @next/font/google, you'd import it in layout.js/jsx
-  like this:
-  import { GeistSans } from 'geist/font/sans'; // or GeistMono, etc.
-  Then apply it to your <body> or root div.
-  If you're self-hosting or using another CDN, ensure the @font-face rules are here.
-  For demonstration, assuming a public CDN or local setup for Geist:
-*/
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap');
-
-
-/* Tailwind CSS base, components, and utilities */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom Animations */
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+@layer base {
+  :root {
+    --background: 20 14% 97%;
+    --foreground: 20 14% 4%;
+    --card: 20 14% 97%;
+    --card-foreground: 20 14% 4%;
+    --popover: 20 14% 97%;
+    --popover-foreground: 20 14% 4%;
+    --primary: 21 89% 51%;
+    --primary-foreground: 20 14% 99%;
+    --secondary: 20 5% 90%;
+    --secondary-foreground: 20 14% 4%;
+    --muted: 20 5% 90%;
+    --muted-foreground: 20 5% 45%;
+    --accent: 20 8% 85%;
+    --accent-foreground: 20 14% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 20 5% 80%;
+    --input: 20 5% 80%;
+    --ring: 21 89% 51%;
+    --radius: 0.5rem;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+ 
+  .dark {
+    --background: 20 14% 4%;
+    --foreground: 20 5% 95%;
+    --card: 20 14% 4%;
+    --card-foreground: 20 5% 95%;
+    --popover: 20 14% 4%;
+    --popover-foreground: 20 5% 95%;
+    --primary: 21 89% 51%;
+    --primary-foreground: 20 14% 99%;
+    --secondary: 20 5% 15%;
+    --secondary-foreground: 20 5% 95%;
+    --muted: 20 5% 15%;
+    --muted-foreground: 20 5% 64%;
+    --accent: 20 5% 20%;
+    --accent-foreground: 20 5% 95%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 20 5% 15%;
+    --input: 20 5% 15%;
+    --ring: 21 89% 51%;
   }
 }
-
-.animate-fade-in-up {
-  animation: fade-in-up 1s ease-out forwards;
-}
-
-.text-shadow-lg {
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-}
-
-/* Apply base fonts (optional, can be done via Tailwind config or layout.js) */
-.font-poppins {
-  font-family: 'Poppins', sans-serif;
-}
-.font-geist {
-  font-family: 'Geist', sans-serif;
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
 }
